@@ -8,7 +8,7 @@ const CI = !!process.env.CI;
 
 module.exports = ({ dirname }) => {
   const pkg = require(resolve(dirname, 'package.json'));
-  const displayName = pkg.name.replace('@graphql-codegen/', '');
+  const displayName = CI ? undefined : pkg.name.replace('@graphql-codegen/', '');
 
   return {
     displayName,
