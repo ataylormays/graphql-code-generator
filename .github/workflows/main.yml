@@ -25,10 +25,10 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - uses: actions/cache@v1
         with:
-        path: .cache/jest
-        key: ${{ runner.os }}-jest-${{ hashFiles('yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-jest-
+          path: .cache/jest
+          key: ${{ runner.os }}-jest-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-jest-
       - name: Install Dependencies using Yarn
         run: yarn install
       - name: Lint
