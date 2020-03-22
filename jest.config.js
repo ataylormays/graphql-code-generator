@@ -7,7 +7,7 @@ const tsconfig = require(TSCONFIG);
 const CI = !!process.env.CI;
 
 module.exports = {
-  preset: 'ts-jest',
+  transform: { '^.+\\.tsx?$': 'ts-jest' },
   testEnvironment: 'node',
   rootDir: ROOT_DIR,
   globals: {
@@ -21,7 +21,5 @@ module.exports = {
   moduleNameMapper: pathsToModuleNameMapper(tsconfig.compilerOptions.paths, { prefix: `${ROOT_DIR}/` }),
   cacheDirectory: resolve(ROOT_DIR, `${CI ? '' : 'node_modules/'}.cache/jest`),
   collectCoverage: false,
-  setupFilesAfterEnv: [
-    '<rootDir>/force-gc.js'
-  ],
+  // setupFilesAfterEnv: ['<rootDir>/force-gc.js'],
 };

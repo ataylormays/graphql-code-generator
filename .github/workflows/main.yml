@@ -45,7 +45,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Test
-        run: yarn test --runInBand
+        run: yarn test
         env:
           CI: true
       - name: Test dev-tests
