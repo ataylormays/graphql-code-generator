@@ -90,12 +90,10 @@
   },
   "lint-staged": {
     "packages/**/src/**/*.{ts,tsx}": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "**/*.{ts,tsx,graphql,yml}": [
-      "prettier --write",
-      "git add -f"
+      "prettier --write"
     ]
   },
   "resolutions": {

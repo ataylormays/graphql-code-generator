@@ -1,5 +1,5 @@
 import { oneLine } from 'common-tags';
-import { join, resolve } from 'path';
+import { resolve } from 'path';
 import { existsSync } from 'fs';
 
 declare global {
