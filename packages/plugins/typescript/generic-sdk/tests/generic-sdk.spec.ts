@@ -4,8 +4,7 @@ import { plugin } from '../src/index';
 import { parse, buildClientSchema, GraphQLSchema } from 'graphql';
 import { Types, mergeOutputs } from '@graphql-codegen/plugin-helpers';
 import { plugin as tsPlugin, TypeScriptPluginConfig } from '@graphql-codegen/typescript';
-import { plugin as tsDocumentsPlugin } from '@graphql-codegen/typescript-operations';
-import { TypeScriptDocumentsPluginConfig } from '@graphql-codegen/typescript-operations';
+import { plugin as tsDocumentsPlugin, TypeScriptDocumentsPluginConfig } from '@graphql-codegen/typescript-operations';
 
 const schema = buildClientSchema(require('../../../../../dev-test/githunt/schema.json'));
 const basicDoc = parse(/* GraphQL */ `
