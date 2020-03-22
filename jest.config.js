@@ -21,4 +21,7 @@ module.exports = {
   moduleNameMapper: pathsToModuleNameMapper(tsconfig.compilerOptions.paths, { prefix: `${ROOT_DIR}/` }),
   cacheDirectory: resolve(ROOT_DIR, `${CI ? '' : 'node_modules/'}.cache/jest`),
   collectCoverage: false,
+  setupFilesAfterEnv: [
+    '<rootDir>/force-gc.js'
+  ],
 };

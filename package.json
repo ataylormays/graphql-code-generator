@@ -5,7 +5,6 @@
     "prebuild": "rimraf packages/{*,plugins/*/*,presets/*,utils/*}/dist",
     "build": "lerna run build --ignore @graphql-codegen/live-demo --ignore @graphql-codegen/website",
     "test": "node --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage --no-watchman",
-    "coverage": "jest --no-watchman --runInBand --coverage",
     "lint": "eslint --ext .ts .",
     "prettier": "prettier --ignore-path .gitignore --write --list-different \"**/*.{ts,tsx,graphql,yml}\"",
     "prettier:check": "prettier --ignore-path .gitignore --check \"**/*.{ts,tsx,graphql,yml}\"",
