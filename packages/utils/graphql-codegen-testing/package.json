@@ -33,10 +33,6 @@
     "open": "7.0.3",
     "tslib": "1.11.1"
   },
-  "devDependencies": {
-    "bob-the-bundler": "0.3.4",
-    "typescript": "3.8.3"
-  },
   "publishConfig": {
     "access": "public"
   }

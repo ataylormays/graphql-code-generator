@@ -22,7 +22,13 @@ jobs:
       - name: Use Node ${{matrix.node_version}}
         uses: actions/setup-node@master
         with:
-          version: ${{ matrix.node_version }}
+          node-version: ${{ matrix.node_version }}
+      - uses: actions/cache@v1
+        with:
+        path: .cache/jest
+        key: ${{ runner.os }}-jest-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-jest-
       - name: Install Dependencies using Yarn
         run: yarn install
       - name: Lint
@@ -31,6 +37,8 @@ jobs:
         run: yarn build
       - name: Test
         run: yarn test
+        env:
+          CI: true
       - name: Test dev-tests
         run: |
           dev-test/generate-all.sh
