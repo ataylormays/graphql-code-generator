@@ -49,4 +49,7 @@ module.exports = {
     '^@graphql-codegen/testing$': '<rootDir>/packages/utils/graphql-codegen-testing/src/index.ts',
     '^@graphql-codegen/plugin-helpers$': '<rootDir>/packages/utils/plugins-helpers/src/index.ts'
   },
+  setupFilesAfterEnv: [
+    '<rootDir>/force-gc.js'
+  ]
 };
